@@ -7,11 +7,13 @@
 </template>
 
 <script>
-    export default {
-        data() {
-            return {
-                title: 'Villages',
-            };
-        },
-    };
+export default {
+    name: 'Header',
+    props: {
+        title: {
+            type: String,
+            required: true
+        }
+    },
+};
 </script>

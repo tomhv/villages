@@ -1,6 +1,7 @@
 import '../css/app.css';
+
 import Vue from 'vue';
-import Page from './page';
+import Page from './pages/page';
 
 new Vue({
     render:  (h) => h(Page)
