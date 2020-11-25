@@ -10,6 +10,10 @@ Encore
     .addAliases({
         '@': path.resolve(__dirname, 'assets', 'js')
     })
+   .configureBabelPresetEnv((config) => {
+        config.useBuiltIns = 'usage';
+        config.corejs = 3;
+    })
 ;
 
 module.exports = Encore.getWebpackConfig();

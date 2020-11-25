@@ -10,6 +10,7 @@
 <script>
 import HeaderComponent from '@/components/Header';
 import VillageListComponent from '@/components/VillageList';
+import axios from 'axios';
 
 export default {
   name: 'App',
@@ -20,24 +21,13 @@ export default {
   data() {
     return {
       title: 'Villages',
-      villages: [
-        {
-          id: "2c3ad882-e987-462f-8965-75a42ad603fa",
-          name: "Village One",
-          population: 345,
-        },
-        {
-          id: "216b01fa-8383-4163-82df-a0497aafcedc",
-          name: "Village Two",
-          population: 12,
-        },
-        {
-          id: "5e6502bb-de06-43c5-b980-c1194285d5db",
-          name: "Village Three",
-          population: 3,
-        },
-      ],
+      villages: [],
     };
+  },
+  async created() {
+    const response = await axios.get('http://localhost:8075/villages.json');
+
+    this.villages = response.data;
   },
 };
 </script>
