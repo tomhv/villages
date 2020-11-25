@@ -5,6 +5,7 @@ Encore
     .setPublicPath('/build')
     .addEntry('app', './assets/js/app.js')
     .enableVueLoader()
+    .enablePostCssLoader()
 ;
 
 module.exports = Encore.getWebpackConfig();

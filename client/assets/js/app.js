@@ -1,4 +1,5 @@
 import '../css/app.css';
+import 'tailwindcss/tailwind.css';
 
 import Vue from 'vue';
 import Page from './pages/page';
