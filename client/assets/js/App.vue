@@ -8,8 +8,8 @@
 </template>
 
 <script>
-import HeaderComponent from './components/Header';
-import VillageListComponent from './components/VillageList/index.vue';
+import HeaderComponent from '@/components/Header';
+import VillageListComponent from '@/components/VillageList';
 
 export default {
   name: 'App',
