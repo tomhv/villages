@@ -3,10 +3,10 @@
 </template>
 
 <script>
-import HeaderComponent from '../components/header';
+import HeaderComponent from './components/Header';
 
 export default {
-    name: 'Page',
+    name: 'App',
     components: {
         HeaderComponent,
     },

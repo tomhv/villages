@@ -2,8 +2,8 @@ import '../css/app.css';
 import 'tailwindcss/tailwind.css';
 
 import Vue from 'vue';
-import Page from './pages/page';
+import App from './App';
 
 new Vue({
-    render:  (h) => h(Page)
+    render: (h) => h(App)
 }).$mount('#app');
