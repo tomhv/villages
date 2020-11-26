@@ -10,10 +10,11 @@ Encore
     .addAliases({
         '@': path.resolve(__dirname, 'assets', 'js')
     })
-   .configureBabelPresetEnv((config) => {
+    .configureBabelPresetEnv((config) => {
         config.useBuiltIns = 'usage';
         config.corejs = 3;
     })
+    .disableSingleRuntimeChunk()
 ;
 
 module.exports = Encore.getWebpackConfig();
