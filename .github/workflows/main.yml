@@ -14,7 +14,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Build and push Docker images
+      - name: Build and push client image
         uses: docker/build-push-action@v1
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
@@ -22,4 +22,13 @@ jobs:
           path: ./client
           target: production
           repository: tomhv/villages-client
+          tags: latest
+
+      - name: Build and push server image
+        uses: docker/build-push-action@v1
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          path: ./server
+          repository: tomhv/villages-server
           tags: latest
