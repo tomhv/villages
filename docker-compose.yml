@@ -1,12 +1,11 @@
 version: '3.6'
 
 services:
-    client-node:
+    client:
         build:
             context: ./client
         volumes:
             - ./client:/home/node/app
-        command: sh -c 'yarn install && yarn watch'
 
     client-nginx:
         image: nginx:stable
@@ -16,10 +15,8 @@ services:
             - ./client:/app
             - ./docker/client-nginx/site.conf:/etc/nginx/conf.d/default.conf
 
-    server-nginx:
+    server:
         build:
             context: ./server
         ports:
             - "8075:80"
-        volumes:
-            - ./server/public:/usr/share/nginx/html

@@ -15,6 +15,7 @@ Encore
         config.corejs = 3;
     })
     .disableSingleRuntimeChunk()
+    .cleanupOutputBeforeBuild()
 ;
 
 module.exports = Encore.getWebpackConfig();

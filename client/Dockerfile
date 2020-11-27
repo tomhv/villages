@@ -6,3 +6,5 @@ WORKDIR /home/node/app
 RUN ls -l /home/node/app
 
 RUN yarn install
+
+CMD ["yarn", "watch"]
