@@ -1,22 +1,22 @@
 [
   {
     "id": "2c3ad882-e987-462f-8965-75a42ad603fa",
-    "name": "Village One",
+    "name": "Elmhaven",
     "population": 345
   },
   {
     "id": "216b01fa-8383-4163-82df-a0497aafcedc",
-    "name": "Village Two",
+    "name": "Sparrow's Edge",
     "population": 12
   },
   {
     "id": "5e6502bb-de06-43c5-b980-c1194285d5db",
-    "name": "Village Three",
+    "name": "Highside",
     "population": 3
   },
   {
     "id": "c13600dc-5872-4ace-ae77-8b8dced0f8ce",
-    "name": "Village Four",
+    "name": "Netherton",
     "population": 1
   }
 ]
