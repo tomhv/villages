@@ -9,3 +9,9 @@ CMD ["yarn", "watch"]
 
 FROM development AS build
 RUN yarn build
+RUN sed -i 's#/build##' /home/node/app/public/index.html
+
+FROM nginx:stable-alpine AS production
+COPY --from=build /home/node/app/public/build /usr/share/nginx/html
+COPY --from=build /home/node/app/public/index.html /usr/share/nginx/html/index.html
+COPY ./docker/site.conf /etc/nginx/conf.d/default.conf
