@@ -13,5 +13,10 @@
     "id": "5e6502bb-de06-43c5-b980-c1194285d5db",
     "name": "Village Three",
     "population": 3
+  },
+  {
+    "id": "c13600dc-5872-4ace-ae77-8b8dced0f8ce",
+    "name": "Village Four",
+    "population": 1
   }
 ]
