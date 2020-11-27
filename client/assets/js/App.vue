@@ -25,7 +25,13 @@ export default {
     };
   },
   async created() {
-    const response = await axios.get('http://localhost:8075/villages.json');
+    var host = 'http://localhost:8075';
+
+    if ('production' == process.env.NODE_ENV) {
+      host = 'https://api.villages.tomhv.uk';
+    }
+
+    const response = await axios.get(host + '/villages.json');
 
     this.villages = response.data;
   },
