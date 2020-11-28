@@ -1,5 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Cinzel+Decorative&display=swap');
+
+h1.logo {
+  font-family: 'Cinzel Decorative', cursif;
+}
 
 h1 {
-  font-family: 'Cinzel Decorative', cursif;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
 }

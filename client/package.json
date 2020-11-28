@@ -31,5 +31,8 @@
             "tailwindcss": {},
             "autoprefixer": {}
         }
+    },
+    "dependencies": {
+        "vue-router": "^3.4.9"
     }
 }
