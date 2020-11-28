@@ -2,7 +2,7 @@ import '../css/app.css';
 import 'tailwindcss/tailwind.css';
 
 import Vue from 'vue';
-import VueRouter from 'vue-router'
+import VueRouter from 'vue-router';
 
 import App from '@/App';
 import HomePage from '@/pages/Home';

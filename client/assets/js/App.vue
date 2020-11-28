@@ -1,6 +1,6 @@
 <template>
   <div>
-    <header-component :title="title" />
+    <header-component />
     <section class="px-4 2xl:px-96">
       <router-view></router-view>
     </section>

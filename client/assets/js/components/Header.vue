@@ -15,11 +15,5 @@
 <script>
 export default {
   name: 'Header',
-  props: {
-    title: {
-      type: String,
-      required: true
-    }
-  },
 };
 </script>
