@@ -24,7 +24,7 @@ export default {
       host = 'https://api.villages.tomhv.uk';
     }
 
-    const response = await axios.get(host + '/villages.json');
+    const response = await axios.get(host + '/villages');
 
     this.villages = response.data;
   },
