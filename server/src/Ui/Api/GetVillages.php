@@ -35,10 +35,15 @@ class GetVillages
                 'population' => 3,
             ],
             [
+                'id' => '0fe87112-2436-4841-bf29-fdf1782c99d4',
+                'name' => 'Fair Shipham',
+                'population' => 2,
+            ],
+            [
                 'id' => 'c13600dc-5872-4ace-ae77-8b8dced0f8ce',
                 'name' => 'Hemlockwood',
                 'population' => 1,
-            ]
+            ],
         ]);
     }
 }
