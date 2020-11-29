@@ -32,3 +32,12 @@ jobs:
           path: ./server
           repository: tomhv/villages-server
           tags: latest
+
+      - name: Build and push server nginx image
+        uses: docker/build-push-action@v1
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          path: ./server_nginx
+          repository: tomhv/villages-server-nginx
+          tags: latest

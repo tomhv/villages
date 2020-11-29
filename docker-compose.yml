@@ -9,7 +9,7 @@ services:
         volumes:
             - ./client:/home/node/app
 
-    client-nginx:
+    client_nginx:
         container_name: client_nginx
         image: nginx:stable
         ports:
@@ -25,13 +25,11 @@ services:
         volumes:
             - ./server:/app
 
-    server-nginx:
+    server_nginx:
         container_name: server_nginx
-        image: nginx:stable
+        build:
+            context: ./server_nginx
         ports:
             - "8075:80"
-        volumes:
-            - ./server:/app
-            - ./server/docker/site.conf:/etc/nginx/conf.d/default.conf
         depends_on:
             - server
