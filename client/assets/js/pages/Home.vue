@@ -1,5 +1,13 @@
 <template>
-  <village-list-component :villages="villages" />
+  <div class="mt-4">
+    <button
+      class="rounded text-gray-100 bg-red-800 p-2"
+      @click="loadVillages"
+    >
+      Refresh
+    </button>
+    <village-list-component :villages="villages" />
+  </div>
 </template>
 
 <script>

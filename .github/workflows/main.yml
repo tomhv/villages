@@ -38,6 +38,6 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-          path: ./server_nginx
+          path: ./docker/server_nginx
           repository: tomhv/villages-server-nginx
           tags: latest
