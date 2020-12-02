@@ -28,8 +28,21 @@ services:
     server_nginx:
         container_name: server_nginx
         build:
-            context: ./server_nginx
+            context: ./docker/server_nginx
         ports:
             - "8075:80"
         depends_on:
             - server
+
+    db:
+        container_name: db
+        image: postgres
+        restart: always
+        environment:
+            POSTGRES_USER: villages
+            POSTGRES_PASSWORD: villages
+            POSTGRES_DB: villages
+            PGDATA: /var/lib/postgresql/data/pgdata
+        volumes:
+            - ./docker/db/data:/var/lib/postgresql/data
+            - ./docker/db/initdb.d:/docker-entrypoint-initdb.d
