@@ -17,16 +17,21 @@ export default {
       villages: [],
     };
   },
-  async created() {
-    var host = 'http://localhost:8075';
+  created() {
+    this.loadVillages();
+  },
+  methods: {
+    loadVillages: async function() {
+      var host = 'http://localhost:8075';
 
-    if ('production' == process.env.NODE_ENV) {
-      host = 'https://api.villages.tomhv.uk';
-    }
+      if ('production' == process.env.NODE_ENV) {
+        host = 'https://api.villages.tomhv.uk';
+      }
 
-    const response = await axios.get(host + '/villages');
+      const response = await axios.get(host + '/villages');
 
-    this.villages = response.data;
+      this.villages = response.data;
+    },
   },
 };
 </script>
