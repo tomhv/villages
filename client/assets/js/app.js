@@ -8,8 +8,11 @@ import App from '@/App';
 import HomePage from '@/pages/Home';
 import SignUpPage from '@/pages/SignUp';
 import SignInPage from '@/pages/SignIn';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 Vue.use(VueRouter);
+
+Vue.component('font-awesome-icon', FontAwesomeIcon);
 
 const router = new VueRouter({
   routes: [
