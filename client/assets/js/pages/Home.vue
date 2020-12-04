@@ -1,15 +1,10 @@
 <template>
   <div class="mt-4">
-    <button
-      class="rounded text-gray-100 bg-red-800 p-4"
-      @click="loadVillages"
-    >
-      <font-awesome-icon
-        class="mr-2"
-        :icon="['fas', 'sync-alt']"
-      />
-      Refresh
-    </button>
+    <div class="flex justify-end">
+      <a href="#"  class="mr-1" @click="loadVillages">
+        <font-awesome-icon class="text-blue-400" icon="sync-alt" />
+      </a>
+    </div>
     <village-list-component :villages="villages" />
   </div>
 </template>
@@ -17,7 +12,7 @@
 <script>
 import axios from 'axios';
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faSyncAlt } from "@fortawesome/free-solid-svg-icons";
+import { faSyncAlt } from "@fortawesome/free-solid-svg-icons/faSyncAlt";
 import VillageListComponent from '@/components/VillageList';
 
 library.add(faSyncAlt);
