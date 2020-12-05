@@ -33,6 +33,8 @@ services:
             - "8075:80"
         depends_on:
             - server
+        volumes:
+            - ./server:/app
 
     db:
         container_name: db
