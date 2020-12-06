@@ -21,22 +21,27 @@
       </div>
     </form>
 
-    <div v-show="submitted" class="mt-6">Submitted email address: <strong>{{ submitted }}</strong></div>
+    <div v-show="userId" class="mt-6">User ID: <strong>{{ userId }}</strong></div>
   </section>
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   name: 'SignUp',
   data() {
     return {
       email: '',
-      submitted: '',
+      userId: null,
     };
   },
   methods: {
-    handleSubmit() {
-      this.$data.submitted = this.$data.email;
+    async handleSubmit() {
+      const signUp = { username: this.$data.email };
+      const response = await axios.post('http://localhost:8075/sign-up', signUp);
+
+      this.$data.userId = response.data.userId;
       this.$data.email = '';
     },
   },
