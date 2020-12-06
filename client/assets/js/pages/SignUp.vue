@@ -1,5 +1,5 @@
 <template>
-  <section class="p-2 py-4 2xl:px-96">
+  <section class="p-2 py-4">
     <h1 class="text-3xl">Sign Up</h1>
     <form @submit.prevent="handleSubmit" class="my-4">
       <div class="my-6">

@@ -1,5 +1,6 @@
 import '../css/app.css';
 import 'tailwindcss/tailwind.css';
+import '../images/favicon.ico';
 
 import Vue from 'vue';
 import VueRouter from 'vue-router';
