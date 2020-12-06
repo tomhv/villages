@@ -38,8 +38,15 @@ export default {
   },
   methods: {
     async handleSubmit() {
-      const signUp = { username: this.$data.email };
-      const response = await axios.post('http://localhost:8075/sign-up', signUp);
+      let host = 'http://localhost:8075';
+
+      if ('production' == process.env.NODE_ENV) {
+        host = 'https://api.villages.tomhv.uk';
+      }
+
+      const response = await axios.post(host + '/sign-up', {
+        username: this.$data.email
+      });
 
       this.$data.userId = response.data.userId;
       this.$data.email = '';
