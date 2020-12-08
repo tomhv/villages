@@ -5,6 +5,7 @@
         "php": ">=7.2.5",
         "ext-ctype": "*",
         "ext-iconv": "*",
+        "eventsauce/doctrine-message-repository": "^0.8.2",
         "nelmio/cors-bundle": "^2.1",
         "sensio/framework-extra-bundle": "^5.6",
         "symfony/browser-kit": "5.2.*",
