@@ -1,0 +1,14 @@
+<?php
+
+declare(strict_types=1);
+
+{# /path/to/project/.phpactor/templates/phpunit_test/SourceCode.php.twig #}
+namespace {{ prototype.namespace }};
+
+use PHPUnit\Framework\TestCase;
+
+{% for class in prototype.classes %}
+class {{ class.name }} extends TestCase
+{
+}
+{% endfor %}
