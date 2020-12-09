@@ -5,8 +5,8 @@ code_transform.class_new.variants:
   "PHPUnit test": phpunit_test
 
 navigator.destinations:
-    source: src/<kernel>.php
-    "PHPUnit test": tests/<kernel>Test.php
+    source: server/src/<kernel>.php
+    "PHPUnit test": server/tests/<kernel>Test.php
 
 navigator.autocreate:
   source: final
