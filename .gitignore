@@ -2,3 +2,5 @@
 /client/public/build
 
 /docker/db/data
+
+/server/php_test_coverage

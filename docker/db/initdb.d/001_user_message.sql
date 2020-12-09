@@ -1,4 +1,4 @@
-CREATE TABLE user_message (
+CREATE TABLE identity_user_message (
         event_id                VARCHAR(36) NOT NULL,
         event_type              VARCHAR(100) NOT NULL,
         aggregate_root_id       VARCHAR(36) NOT NULL,
@@ -7,5 +7,5 @@ CREATE TABLE user_message (
         payload                 VARCHAR(5000) NOT NULL
 );
 
-CREATE INDEX aggregate_root_id_ix ON user_message (aggregate_root_id);
-CREATE INDEX time_of_recording_idx ON user_message (time_of_recording);
+CREATE INDEX aggregate_root_id_ix ON identity_user_message (aggregate_root_id);
+CREATE INDEX time_of_recording_idx ON identity_user_message (time_of_recording);
