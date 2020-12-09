@@ -24,7 +24,7 @@ test: test.phpunit
 
 ## Run phpunit tests.
 test.phpunit:
-	docker-compose run --rm server bin/phpunit --coverage-html php_test_coverage
+	docker-compose run --rm server bin/phpunit --coverage-html php_test_coverage --coverage-text
 
 
 ############
