@@ -1,6 +1,12 @@
 <template>
   <section class="p-2 py-4">
     <h1 class="text-3xl">Sign Up</h1>
+    <p class="my-4">
+      This application is in its VERY early stages of development.<br />
+      Please do not enter your email address unless you have been instructed to by Tom.<br />
+      There should be no expectation of privacy.<br />
+      Any data entered will be deleted periodically and often without warning.
+    </p>
     <form @submit.prevent="handleSubmit" class="my-4">
       <div class="my-6">
         <label class="block text-sm font-medium text-gray-700 sr-only" for="email">
