@@ -11,7 +11,7 @@ final class UserId implements AggregateRootId
 {
     private $uuid;
 
-    public function __construct(string $uuid)
+    private function __construct(string $uuid)
     {
         $this->uuid = Uuid::fromString($uuid);
     }
