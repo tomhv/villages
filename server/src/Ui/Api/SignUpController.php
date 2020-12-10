@@ -40,7 +40,7 @@ final class SignUpController
 
         $this->commandBus->dispatch(SignUp::with(
             (string) $userId,
-            $data['username'],
+            $data['email'],
             $data['username']
         ));
 

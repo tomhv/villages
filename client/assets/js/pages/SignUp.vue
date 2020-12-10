@@ -8,7 +8,18 @@
       Any data entered will be deleted periodically and often without warning.
     </p>
     <form @submit.prevent="handleSubmit" class="my-4">
-      <div class="my-6">
+      <div class="my-2">
+        <label class="block text-sm font-medium text-gray-700 sr-only" for="username">
+          Username
+        </label>
+        <input
+          class="p-4 my-2 mr-2 border rounded border-gray-300"
+          type="text"
+          placeholder="Enter username..."
+          v-model="username"
+        />
+      </div>
+      <div class="my-2">
         <label class="block text-sm font-medium text-gray-700 sr-only" for="email">
           Email address
         </label>
@@ -18,6 +29,8 @@
           placeholder="Enter address..."
           v-model="email"
         />
+      </div>
+      <div class="my-2">
         <button
           type="submit"
           class="p-4 rounded bg-red-500 text-gray-100 uppercase"
@@ -38,6 +51,7 @@ export default {
   name: 'SignUp',
   data() {
     return {
+      username: '',
       email: '',
       userId: null,
     };
@@ -51,11 +65,13 @@ export default {
       }
 
       const response = await axios.post(host + '/sign-up', {
-        username: this.$data.email
+        username: this.$data.username,
+        email: this.$data.email,
       });
 
       this.$data.userId = response.data.userId;
       this.$data.email = '';
+      this.$data.username = '';
     },
   },
 };
