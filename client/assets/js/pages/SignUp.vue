@@ -61,20 +61,20 @@ export default {
   },
   methods: {
     handleSubmit() {
-      signUp(this.$data.username, this.$data.email)
+      signUp(this.username, this.email)
         .then(response => {
-          this.$data.userId = response.data.userId;
-          this.$data.email = null;
-          this.$data.username = null;
-          this.$data.error = null;
+          this.userId = response.data.userId;
+          this.email = null;
+          this.username = null;
+          this.error = null;
         })
         .catch(error => {
           if (error.response) {
-            this.$data.error = 'Oh noes! The API isn\'t behaving very well.';
+            this.error = 'Oh noes! The API isn\'t behaving very well.';
           } else if (error.request) {
-            this.$data.error = 'Oh noes! Oh, where has the little API gone?!';
+            this.error = 'Oh noes! Oh, where has the little API gone?!';
           } else {
-            this.$data.error = 'Oh noes! Well that\'s rubbish!';
+            this.error = 'Oh noes! Well that\'s rubbish!';
           }
         })
       ;
