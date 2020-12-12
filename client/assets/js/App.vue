@@ -22,7 +22,7 @@ export default {
   data() {
     return {
       user: null,
-      versionNumber: '0.1.1',
+      versionNumber: '0.1.2',
     };
   },
   components: {
