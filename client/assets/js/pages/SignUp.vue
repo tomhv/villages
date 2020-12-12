@@ -64,6 +64,13 @@ export default {
       signUp(this.username, this.email)
         .then(response => {
           this.userId = response.data.userId;
+
+          this.$emit('user-signed-up', {
+            username: this.username,
+            email: this.email,
+            userId: this.userId,
+          });
+
           this.email = null;
           this.username = null;
           this.error = null;

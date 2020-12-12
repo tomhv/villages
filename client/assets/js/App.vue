@@ -2,7 +2,9 @@
   <div>
     <header-component />
     <section class="px-4 2xl:px-96">
-      <router-view></router-view>
+      <router-view
+        @user-signed-up="onUserSignedUp"
+      />
     </section>
   </div>
 </template>
@@ -15,5 +17,11 @@ export default {
   components: {
     HeaderComponent,
   },
+  methods: {
+    onUserSignedUp(payload) {
+      console.log('Listening to user-signed-up');
+      console.log(payload);
+    },
+  }
 };
 </script>
