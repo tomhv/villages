@@ -3,6 +3,8 @@
     <header-component
       :isAuthenticated="isAuthenticated"
       :user="user"
+      :versionNumber="versionNumber"
+      @user-signed-out="onUserSignedOut"
     />
     <section class="px-4 2xl:px-96">
       <router-view
@@ -20,6 +22,7 @@ export default {
   data() {
     return {
       user: null,
+      versionNumber: '0.1.0',
     };
   },
   components: {
@@ -42,6 +45,11 @@ export default {
       };
 
       this.$router.push('/profile')
+    },
+    onUserSignedOut(payload) {
+      this.$data.user = null;
+
+      this.$router.push('/')
     },
   }
 };

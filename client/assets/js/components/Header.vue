@@ -2,7 +2,10 @@
   <section class="bg-white p-4 2xl:px-96 border-b border-gray-200">
     <div class="container flex justify-between">
       <h1 class="logo text-3xl align-middle">
-        <router-link to="/">Villages</router-link>
+        <router-link to="/">
+          Villages
+          <span class="text-xs">{{ versionNumber }}</span>
+        </router-link>
       </h1>
       <div class="align-middle">
         <router-link
@@ -26,6 +29,14 @@
         >
           {{ user.username }}
         </router-link>
+        <a
+          class="align-middle ml-6"
+          href="#"
+          v-if="isAuthenticated"
+          @click="handleClickSignOut"
+        >
+          Sign out
+        </a>
         <a class="align-middle ml-6" href="https://github.com/tomhv/villages" target="_blank">
           <font-awesome-icon class="mr-2" :icon="['fab', 'github']" />
         </a>
@@ -50,7 +61,16 @@ export default {
     },
     user: {
       type: Object,
-    }
+    },
+    versionNumber: {
+      type: String,
+      required: true,
+    },
+  },
+  methods: {
+    handleClickSignOut() {
+      this.$emit('user-signed-out');
+    },
   },
 };
 </script>
