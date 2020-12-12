@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Application\User;
+namespace App\Application\Identity;
 
 final class SignUp
 {
