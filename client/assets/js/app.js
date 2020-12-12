@@ -9,6 +9,7 @@ import App from '@/App';
 import HomePage from '@/pages/Home';
 import SignUpPage from '@/pages/SignUp';
 import SignInPage from '@/pages/SignIn';
+import MyProfilePage from '@/pages/MyProfile';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 Vue.use(VueRouter);
@@ -20,6 +21,7 @@ const router = new VueRouter({
     { path: '/', component: HomePage },
     { path: '/sign-up', component: SignUpPage },
     { path: '/sign-in', component: SignInPage },
+    { path: '/profile', component: MyProfilePage },
   ]
 });
 
