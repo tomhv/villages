@@ -18,13 +18,11 @@ use Symfony\Component\Notifier\Recipient\Recipient;
 final class SignUpHandler implements MessageHandlerInterface
 {
     private AggregateRootRepository $identityUserRepository;
-    private NotifierInterface $notifier;
     private LoggerInterface $logger;
 
     public function __construct(AggregateRootRepository $identityUserRepository, NotifierInterface $notifier, LoggerInterface $logger)
     {
         $this->identityUserRepository = $identityUserRepository;
-        $this->notifier = $notifier;
         $this->logger = $logger;
     }
 
@@ -36,20 +34,11 @@ final class SignUpHandler implements MessageHandlerInterface
             EmailAddress::fromString($signUp->email())
         ));
 
-        $this->logger->error(sprintf(
+        $this->logger->info(sprintf(
             'Sign up: %s %s %s',
             $signUp->username(),
             $signUp->email(),
             $signUp->userId()
-        ));
-
-        $notification = (new Notification("You've signed up!", ['email']))
-            ->content("You've signed up for Villages!")
-        ;
-
-        // Send the notification to the recipient
-        $sentMessage = $this->notifier->send($notification, new Recipient(
-            $signUp->email(),
         ));
     }
 }
