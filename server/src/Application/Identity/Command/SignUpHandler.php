@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Application\Identity;
+namespace App\Application\Identity\Command;
 
 use App\Domain\Identity\EmailAddress;
 use App\Domain\Identity\User;

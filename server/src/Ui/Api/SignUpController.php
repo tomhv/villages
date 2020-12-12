@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Ui\Api;
 
-use App\Application\Identity\SignUp;
+use App\Application\Identity\Command\SignUp;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
