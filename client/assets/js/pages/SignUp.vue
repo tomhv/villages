@@ -40,8 +40,6 @@
       </button>
       </div>
     </form>
-
-    <div v-show="userId" class="mt-6">User ID: <strong>{{ userId }}</strong></div>
   </section>
 </template>
 
@@ -55,7 +53,6 @@ export default {
     return {
       username: null,
       email: null,
-      userId: null,
       error: null,
     };
   },
@@ -63,12 +60,10 @@ export default {
     handleSubmit() {
       signUp(this.username, this.email)
         .then(response => {
-          this.userId = response.data.userId;
-
           this.$emit('user-signed-up', {
             username: this.username,
             email: this.email,
-            userId: this.userId,
+            userId: response.data.userId,
           });
 
           this.email = null;
