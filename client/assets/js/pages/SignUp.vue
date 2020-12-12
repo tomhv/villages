@@ -47,6 +47,7 @@
 
 <script>
 import axios from 'axios';
+import { signUp } from '@/services/users';
 
 export default {
   name: 'SignUp',
@@ -60,17 +61,7 @@ export default {
   },
   methods: {
     handleSubmit() {
-      let host = 'http://localhost:8075';
-
-      if ('production' == process.env.NODE_ENV) {
-        host = 'https://api.villages.tomhv.uk';
-      }
-
-      axios
-        .post(host + '/sign-up,', {
-          username: this.$data.username,
-          email: this.$data.email,
-        })
+      signUp(this.$data.username, this.$data.email)
         .then(response => {
           this.$data.userId = response.data.userId;
           this.$data.email = null;
