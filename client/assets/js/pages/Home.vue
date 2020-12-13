@@ -33,13 +33,7 @@ export default {
   },
   methods: {
     loadVillages: async function() {
-      var host = 'http://localhost:8075';
-
-      if ('production' == process.env.NODE_ENV) {
-        host = 'https://api.villages.tomhv.uk';
-      }
-
-      const response = await axios.get(host + '/villages');
+      const response = await axios.get('/api/villages');
 
       this.villages = response.data;
     },

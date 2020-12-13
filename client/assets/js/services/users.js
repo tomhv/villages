@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { baseUrl } from '@/services/api';
 
 /**
  * @param {string} username
@@ -9,8 +8,7 @@ import { baseUrl } from '@/services/api';
 export function signUp(username, email) {
   return axios({
     method: 'post',
-    baseURL: baseUrl(),
-    url: '/sign-up',
+    url: '/api/sign-up',
     data: { username, email },
   });
 }
