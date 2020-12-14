@@ -3,7 +3,7 @@
 #####################
 
 ## Get the app running
-start: docker.up
+start: docker.up ps
 
 ## Stop the app from running (losing all data)
 stop: docker.down
@@ -50,6 +50,15 @@ docker.logs:
 ## See what's running
 docker.ps:
 	docker-compose ps
+
+
+###########
+#- Debug -#
+###########
+
+## Debug Router
+debug.router:
+	docker-compose exec server bin/console debug:router
 
 
 .DEFAULT_GOAL := help

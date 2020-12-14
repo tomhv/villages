@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Villages</title>
+    {% block stylesheets %}
+    <link rel="stylesheet" href="/build/app.css">
+    {% endblock %}
+  </head>
+  <head>
+  </head>
+  <body class="bg-gray-100 text-gray-800">
+    <section class="bg-white p-4 2xl:px-96 border-b border-gray-200">
+      <div class="container flex justify-between items-center">
+        <h1 class="logo text-2xl sm:text-3xl align-middle">
+          <a href="/">Villages</a>
+        </h1>
+      </div>
+    </section>
+    {% block body %}{% endblock %}
+    {% block javascripts %}{% endblock %}
+  </body>
+</html>

@@ -1,6 +1,11 @@
 controllers:
     resource: ../../src/Controller/
     type: annotation
+    format: json
+
+ui_web:
+    resource: ../../src/Ui/Web/
+    type: annotation
 
 ui_api:
     resource: ../../src/Ui/Api/
