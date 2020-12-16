@@ -8,20 +8,13 @@
         </router-link>
       </h1>
       <div class="align-middle sm:text-sm lg:text-base">
-        <router-link
-          class="align-middle"
-          to="/sign-up"
-          v-if="!isAuthenticated"
-        >
-          Sign Up
-        </router-link>
-        <router-link
+        <a
           class="align-middle ml-2 sm:ml-6"
-          to="/sign-in"
+          href="/identity/sign-in"
           v-if="!isAuthenticated"
         >
           Sign In
-        </router-link>
+        </a>
         <router-link
           class="align-middle ml-2 sm:ml-6"
           to="/profile"

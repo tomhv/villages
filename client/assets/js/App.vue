@@ -16,6 +16,7 @@
 
 <script>
 import HeaderComponent from '@/components/Header';
+import { me } from '@/services/users';
 
 export default {
   name: 'App',
@@ -31,10 +32,20 @@ export default {
   computed: {
     isAuthenticated() {
       return (
-        this.user !== null &&
-        this.user.token !== null
+        this.user !== null
       );
     }
+  },
+  created() {
+    me()
+      .then(response => {
+        if (response.data.username) {
+          this.$data.user = {
+            username: response.data.username,
+          };
+        }
+      })
+    ;
   },
   methods: {
     onUserSignedUp(payload) {
@@ -49,7 +60,7 @@ export default {
     onUserSignedOut(payload) {
       this.$data.user = null;
 
-      this.$router.push('/')
+      window.location.href = '/identity/sign-out';
     },
   }
 };

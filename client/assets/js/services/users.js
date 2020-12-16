@@ -12,3 +12,10 @@ export function signUp(username, email) {
     data: { username, email },
   });
 }
+
+export function me() {
+  return axios({
+    method: 'get',
+    url: '/identity/me',
+  });
+}

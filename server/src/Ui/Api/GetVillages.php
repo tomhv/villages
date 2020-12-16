@@ -4,10 +4,11 @@ declare(strict_types=1);
 
 namespace App\Ui\Api;
 
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
 
-class GetVillages
+class GetVillages extends AbstractController
 {
     /**
      * @Route(

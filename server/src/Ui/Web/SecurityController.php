@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Ui\Web;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
@@ -19,7 +20,7 @@ final class SecurityController extends AbstractController
 
     /**
      * @Route(
-     *     "/login",
+     *     "/identity/sign-in",
      *      name="app_login",
      *      methods={"GET", "POST"}
      * )
@@ -44,7 +45,7 @@ final class SecurityController extends AbstractController
     }
 
     /**
-     * @Route("/logout", name="app_logout")
+     * @Route("/identity/sign-out", name="app_logout")
      */
     public function logout()
     {
@@ -52,5 +53,19 @@ final class SecurityController extends AbstractController
             This method can be blank - it will be intercepted by the logout key
             on your firewall.
         ');
+    }
+
+    /**
+     * @Route(
+     *     "/identity/me",
+     *     name="app_me",
+     *     methods={"GET"}
+     * )
+     */
+    public function me()
+    {
+        return new JsonResponse([
+            'username' => $this->getUser()->getUsername(),
+        ]);
     }
 }
